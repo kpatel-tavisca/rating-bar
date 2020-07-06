@@ -1,19 +1,27 @@
-import { html, customElement, LitElement } from 'lit-element';
+import { html, customElement, LitElement, property } from 'lit-element';
+import { styleMap } from 'lit-html/directives/style-map';
 import styles from './rating-bar-css';
 
 @customElement('orxe-rating-bar')
 export default class OrxeRatingBar extends LitElement {
-  /**
-   * Implement `render` to define a template for button element.
-   */
+
+  @property({type: Number})
+  rating;
+
   render() {
+    const bar = {
+      background: `linear-gradient(to right, green ${this.rating * 10}%, grey ${this.rating * 10}%, grey)`
+    };
     return html`
-      <p>Hello, Welcome to lit Elements</p>
+    <section class="rating-bar-container">
+      <div class="rating-bar" style="${styleMap(bar)}"></div>
+      <p class="rating-bar-desc">
+        <span>Location</span>
+        <span>${this.rating}</span>
+      </p>
+    </section>
     `;
   }
 
-  /**
-   *  Getting styles from components custom scss file
-   */
   static styles = styles;
 }

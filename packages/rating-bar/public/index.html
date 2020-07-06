@@ -22,9 +22,20 @@
     />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.3.0/custom-elements-es5-adapter.js"></script>
-
   </head>
+  <style>
+    orxe-rating-bar, orxe-rating-circle {
+      display: block;
+    }
+    orxe-rating-bar {
+      margin-bottom: 20px;
+    }
+    orxe-rating-circle {
+      text-align: center;
+    }
+  </style>
   <body>
-    <orxe-rating-bar></orxe-rating-bar>
+    <orxe-rating-bar rating="7"></orxe-rating-bar>
+    <orxe-rating-circle rating="9"> </orxe-rating-circle>
   </body>
 </html>
