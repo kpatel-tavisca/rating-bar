@@ -1,10 +1,17 @@
 import {css} from 'lit-element';
 export default css`
-    .rating-circle-container > svg {
-        height: 40px;
-        width: 40px;
-        font-size: 1.4rem;
+    :host {
+        --rating-excellent: var(--primary);
+        /* --rating-great: var(--rating-great);*/
+        --rating-average: var(--warning);
+        /* --rating-poor: var(--rating-poor); */
+        --rating-bad: var(--error);
+        font-family: var(--primary-font-family);
+        font-color: var(--primary-text);
         font-weight: 600;
+    }
+    .rating-circle-container{
+        font-size: 1.4rem;
     }
     .rating-circle-container > svg > circle {
         fill: transparent;

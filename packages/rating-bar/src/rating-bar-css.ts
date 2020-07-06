@@ -1,9 +1,18 @@
 import {css} from 'lit-element';
 export default css`
+    :host {
+        --rating-excellent: var(--primary);
+        /* --rating-great: var(--rating-great);*/
+        --rating-average: var(--warning);
+        /* --rating-poor: var(--rating-poor); */
+        --rating-bad: var(--error);
+        font-family: var(--primary-font-family);
+        font-color: var(--primary-text);
+        font-weight: 600;
+    }
     .rating-bar-container {
         height: 32px;
         font-size: 1.6rem;
-        font-weight: 600;
     }
     .rating-bar {
         height: 8px;

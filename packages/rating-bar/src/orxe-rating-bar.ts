@@ -8,9 +8,27 @@ export default class OrxeRatingBar extends LitElement {
   @property({type: Number})
   rating;
 
+  getRatingColor() {
+    if ( this.rating >= 8.5 && this.rating <=10) {
+      return `var(--rating-excellent)`;
+    }
+    if ( this.rating >= 7 && this.rating < 8.5) {
+      return `var(--rating-great)`;
+    }
+    if ( this.rating >= 5 && this.rating < 7) {
+      return `var(--rating-average)`;
+    }
+    if ( this.rating >= 3 && this.rating < 5) {
+      return `var(--rating-poor)`;
+    }
+    if ( this.rating >= 1 && this.rating < 3) {
+      return `var(--rating-bad)`;
+    }
+    return `var(--separator-01)`;
+  }
   render() {
     const bar = {
-      background: `linear-gradient(to right, green ${this.rating * 10}%, grey ${this.rating * 10}%, grey)`
+      background: `linear-gradient(to right, ${this.getRatingColor()} ${this.rating * 10}%, var(--separator-01) ${this.rating * 10}%, var(--separator-01))`
     };
     return html`
     <section class="rating-bar-container">
