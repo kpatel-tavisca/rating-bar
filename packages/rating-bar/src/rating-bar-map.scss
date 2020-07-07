@@ -1,0 +1,10 @@
+:host {
+    --rating-excellent: var(--primary, #238738);
+    /* --rating-great: var(--rating-great);*/
+    --rating-average: var(--warning, #D99B22);
+    /* --rating-poor: var(--rating-poor); */
+    --rating-bad: var(--error, #D9222A);
+    font-family: var(--primary-font-family, 'sans-serif');
+    color: var(--primary-text, #242C38);
+    font-weight: 600;
+}

@@ -1,28 +1,36 @@
-import { html, customElement, property } from 'lit-element';
+import { html, customElement } from 'lit-element';
 import OrxeRatingBar from './orxe-rating-bar';
-import styles from './rating-circle-css';
+import styles from './rating-donut-css';
 
-@customElement('orxe-rating-circle')
+@customElement('orxe-rating-donut')
 export default class OrxeRatingCircle extends OrxeRatingBar {
-  /**
-   * Implement `render` to define a template for button element.
-   */
+
   STROKE_WIDTH = 4;
   CONTAINER_WIDTH = 40;
 
-  @property({type: Number})
-  rating;
+  getDonutProps() {
+    const normalizedRadius = (this.CONTAINER_WIDTH - this.STROKE_WIDTH)/2;
+    const circumference = normalizedRadius * 2 * Math.PI;
+    const offset = circumference - (this.rating / 10 * circumference);
+    return {
+      normalizedRadius,
+      circumference,
+      offset
+    };
+  }
 
   render() {
-     const normalizedRadius = (this.CONTAINER_WIDTH - this.STROKE_WIDTH)/2;
-    const _circumference = normalizedRadius * 2 * Math.PI;
-    const offset = _circumference - (this.rating / 10 * _circumference);
+    const {
+      normalizedRadius,
+      circumference,
+      offset } = this.getDonutProps();
+
     return html`
-    <section class="rating-circle-container">
+    <section class="rating-donut-container">
         <svg height="${this.CONTAINER_WIDTH}" width="${this.CONTAINER_WIDTH}">
           <circle
                   stroke="var(--separator-01)"
-                  stroke-dasharray="${_circumference} ${_circumference}"
+                  stroke-dasharray="${circumference} ${circumference}"
                   stroke-width="${this.STROKE_WIDTH}"
                   r="${normalizedRadius}"
                   cx="${this.CONTAINER_WIDTH / 2}"
@@ -30,7 +38,7 @@ export default class OrxeRatingCircle extends OrxeRatingBar {
               />
           <circle
               stroke="${this.getRatingColor()}"
-              stroke-dasharray="${_circumference} ${_circumference}"
+              stroke-dasharray="${circumference} ${circumference}"
               style="stroke-dashoffset:${offset}"
               stroke-width="${this.STROKE_WIDTH}"
               r="${normalizedRadius}"

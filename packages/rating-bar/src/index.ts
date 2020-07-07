@@ -1,4 +1,8 @@
+import { registerTranslateResources } from '@orxe-culture/lit';
 import OrxeRatingBar from './orxe-rating-bar';
-import OrxeRatingCircle from './orxe-rating-circle';
+import OrxeRatingDonut from './orxe-rating-donut';
+import { translation } from './assets/locales/en-US';
 
-export { OrxeRatingBar, OrxeRatingCircle };
+registerTranslateResources(translation);
+
+export { OrxeRatingBar, OrxeRatingDonut };
