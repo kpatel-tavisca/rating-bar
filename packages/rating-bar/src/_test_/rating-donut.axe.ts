@@ -1,4 +1,4 @@
-import { OrxeRatingBar } from '../';
+import { OrxeRatingDonut } from '../';
 
 import { axe, toHaveNoViolations } from '@orxe-devkit/axe';
 expect.extend(toHaveNoViolations);
@@ -8,20 +8,20 @@ describe('orxe-rating-bar-axe', () => {
     expect(true).toBeTruthy();
   });
   
-  let ratingBar;
+  let ratingDonut;
 
   beforeEach(async () => {
-    OrxeRatingBar;
-    ratingBar = document.createElement('orxe-rating-bar') as OrxeRatingBar;
-    await document.body.append(ratingBar);
+    OrxeRatingDonut;
+    ratingDonut = document.createElement('orxe-rating-donut') as OrxeRatingDonut;
+    await document.body.append(ratingDonut);
   });
 
   afterEach(() => {
-    ratingBar.remove();
+    ratingDonut.remove();
   });
 
   it('should support all WCAG Accessibility Rules. when default toolbar is rendered', async () => {
-    const result = await axe(ratingBar);
+    const result = await axe(ratingDonut);
     expect(result).toHaveNoViolations();
   });
 });

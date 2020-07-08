@@ -38,13 +38,14 @@ export default class OrxeRatingBar extends TranslationClass {
   }
   render() {
     return html`
-    Test
-    <section class="rating-bar-container" role="img" aria-describedby="rating-bar-desc">
-      <div class="rating-bar" style="${styleMap(this.getStyleProps())}"></div>
-      <p class="rating-bar-desc" id="rating-bar-desc">
-        <span>${this.label}</span>
-        <span>${this.rating}</span>
-      </p>
+    <section class="rating-bar-container">
+      <div role="img" aria-label="${this.label} rating ${this.rating} out of 10">
+        <div class="rating-bar" style="${styleMap(this.getStyleProps())}"></div>
+        <p class="rating-bar-desc">
+          <span>${this.label}</span>
+          <span>${this.rating}</span>
+        </p>
+      </div>
     </section>
     `;
   }

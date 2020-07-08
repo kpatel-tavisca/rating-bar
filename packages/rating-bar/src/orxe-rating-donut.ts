@@ -35,7 +35,11 @@ export default class OrxeRatingCircle extends OrxeRatingBar {
 
     return html`
     <section class="rating-donut-container">
-        <svg height="${this.CONTAINER_WIDTH}" width="${this.CONTAINER_WIDTH}">
+        <svg
+        height="${this.CONTAINER_WIDTH}"
+        width="${this.CONTAINER_WIDTH}"
+        role="img"
+        aria-label="${this.label} rating ${this.rating} out of 10">
           <circle
                   stroke="var(--separator-01)"
                   stroke-dasharray="${circumference} ${circumference}"
@@ -56,7 +60,8 @@ export default class OrxeRatingCircle extends OrxeRatingBar {
           <text
               x="50%"
               y="50%"
-              dy="0.3em">
+              dy="0.3em"
+              aria-hidden="true">
                   ${this.rating}
           </text>
         </svg>
