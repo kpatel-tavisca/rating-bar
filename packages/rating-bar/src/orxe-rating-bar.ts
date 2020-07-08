@@ -1,6 +1,6 @@
 import { html, customElement, property } from 'lit-element';
 import { TranslationClass } from '@orxe-culture/lit';
-import { styleMap } from 'lit-html/directives/style-map';
+import { styleMap, StyleInfo } from 'lit-html/directives/style-map';
 import styles from './rating-bar-css';
 
 @customElement('orxe-rating-bar')
@@ -13,7 +13,7 @@ export default class OrxeRatingBar extends TranslationClass {
   label;
 
 
-  getRatingColor() {
+  getRatingColor() : String {
     if ( this.rating >= 8.5 && this.rating <=10) {
       return 'var(--rating-excellent)';
     }
@@ -31,7 +31,7 @@ export default class OrxeRatingBar extends TranslationClass {
     }
     return 'var(--separator-01)';
   }
-  getStyleProps() {
+  getStyleProps(): StyleInfo {
     return {
       background: `linear-gradient(to right, ${this.getRatingColor()} ${this.rating * 10}%, var(--separator-01) ${this.rating * 10}%, var(--separator-01))`
     }

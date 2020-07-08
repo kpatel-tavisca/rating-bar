@@ -5,8 +5,16 @@ import styles from './rating-donut-css';
 @customElement('orxe-rating-donut')
 export default class OrxeRatingCircle extends OrxeRatingBar {
 
+  /**
+   * @constant {Number} STROKE_WIDTH Stroke width for the Circle, value 4
+   */
   STROKE_WIDTH = 4;
+
+  /**
+   * @constant {Number} CONTAINER_WIDTH Container Width for the container, value 40
+   */
   CONTAINER_WIDTH = 40;
+
 
   getDonutProps() {
     const normalizedRadius = (this.CONTAINER_WIDTH - this.STROKE_WIDTH)/2;
