@@ -3,7 +3,7 @@ import OrxeRatingBar from './orxe-rating-bar';
 import styles from './rating-donut-css';
 
 @customElement('orxe-rating-donut')
-export default class OrxeRatingCircle extends OrxeRatingBar {
+export default class OrxeRatingDonut extends OrxeRatingBar {
 
   /**
    * @constant {Number} STROKE_WIDTH Stroke width for the Circle, value 4
@@ -15,7 +15,9 @@ export default class OrxeRatingCircle extends OrxeRatingBar {
    */
   CONTAINER_WIDTH = 40;
 
-
+  /**
+   * Function 
+   */
   getDonutProps() {
     const normalizedRadius = (this.CONTAINER_WIDTH - this.STROKE_WIDTH)/2;
     const circumference = normalizedRadius * 2 * Math.PI;
@@ -34,14 +36,14 @@ export default class OrxeRatingCircle extends OrxeRatingBar {
       offset } = this.getDonutProps();
 
     return html`
-    <section class="rating-donut-container">
+    <section class="rating-donut--container">
         <svg
         height="${this.CONTAINER_WIDTH}"
         width="${this.CONTAINER_WIDTH}"
         role="img"
         aria-label="${this.label} rating ${this.rating} out of 10">
           <circle
-                  stroke="var(--separator-01)"
+                  stroke="var(--rating-track-color)"
                   stroke-dasharray="${circumference} ${circumference}"
                   stroke-width="${this.STROKE_WIDTH}"
                   r="${normalizedRadius}"

@@ -1,4 +1,4 @@
-:host {
+:host{
     --rating-excellent: var(--primary, #238738);
     /* --rating-great: var(--rating-great);*/
     --rating-average: var(--warning, #D99B22);
@@ -8,18 +8,21 @@
     color: var(--primary-text, #242C38);
     font-weight: var(--font-weight-semi-bold, 600);
     --rating-track-color: var(--separator-01, #E1E6ED);
-    --rating-bar-font-size: 1.6rem;
+    --rating-donut-font-size: 1.4rem;
 }
-.rating-bar {
-    height: 8px;
-    border-radius: 10px;
+.rating-donut {
     &--container {
-        height: 32px;
-        font-size: var(--rating-bar-font-size);
-    }
-    &--desc {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 8px;
+        font-size: var(--rating-donut-font-size);
+        svg {
+            circle {
+                fill: transparent;
+                transform: rotate(-90deg);
+                transform-origin: 50% 50%;
+            }
+            text {
+                fill: var(--primary-text, #242C38);
+                text-anchor: middle;
+            }
+        }
     }
 }

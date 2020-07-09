@@ -1,16 +1,2 @@
 import {css} from 'lit-element';
-export default css`
-    .rating-donut-container{
-        font-size: 1.4rem;
-    }
-    .rating-donut-container > svg > circle {
-        fill: transparent;
-        transform: rotate(-90deg);
-        transform-origin: 50% 50%;
-    }
-    .rating-donut-container > svg > text {
-        fill: black;
-        text-anchor: middle;
-    }
-`;
-
+export default css`:host{--rating-excellent: var(--primary, #238738);--rating-average: var(--warning, #D99B22);--rating-bad: var(--error, #D9222A);font-family:var(--primary-font-family, "sans-serif");color:var(--primary-text, #242C38);font-weight:var(--font-weight-semi-bold, 600);--rating-track-color: var(--separator-01, #E1E6ED);--rating-donut-font-size: 1.4rem}.rating-donut--container{font-size:1.4rem}.rating-donut--container svg circle{fill:transparent;transform:rotate(-90deg);transform-origin:50% 50%}.rating-donut--container svg text{fill:black;text-anchor:middle}`;

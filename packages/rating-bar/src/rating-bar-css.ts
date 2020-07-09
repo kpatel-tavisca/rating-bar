@@ -1,17 +1,2 @@
 import {css} from 'lit-element';
-export default css`
-    .rating-bar-container {
-        height: 32px;
-        font-size: 1.6rem;
-    }
-    .rating-bar {
-        height: 8px;
-        border-radius: 10px;
-    }
-    .rating-bar-desc {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 8px;
-    }
-`;
-
+export default css`:host{--rating-excellent: var(--primary, #238738);--rating-average: var(--warning, #D99B22);--rating-bad: var(--error, #D9222A);font-family:var(--primary-font-family, "sans-serif");color:var(--primary-text, #242C38);font-weight:var(--font-weight-semi-bold, 600);--rating-track-color: var(--separator-01, #E1E6ED);--rating-bar-font-size: 1.6rem}.rating-bar{height:8px;border-radius:10px}.rating-bar--container{height:32px;font-size:var(--rating-bar-font-size)}.rating-bar--desc{display:flex;justify-content:space-between;margin-top:8px}`;
