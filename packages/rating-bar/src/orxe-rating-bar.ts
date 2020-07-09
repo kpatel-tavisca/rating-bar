@@ -15,19 +15,19 @@ export default class OrxeRatingBar extends TranslationClass {
 
   getRatingColor() : String {
     if ( this.rating >= 8.5 && this.rating <=10) {
-      return 'var(--rating-excellent, #238738)';
+      return 'var(--rating-excellent)';
     }
     if ( this.rating >= 7 && this.rating < 8.5) {
-      return 'var(--rating-great, #67AB04)';
+      return 'var(--rating-great)';
     }
     if ( this.rating >= 5 && this.rating < 7) {
-      return 'var(--rating-average, #D99B22)';
+      return 'var(--rating-average)';
     }
     if ( this.rating >= 3 && this.rating < 5) {
       return 'var(--rating-poor)';
     }
     if ( this.rating >= 1 && this.rating < 3) {
-      return 'var(--rating-bad, #D9222A)';
+      return 'var(--rating-bad)';
     }
     return 'var(--rating-track-color)';
   }
