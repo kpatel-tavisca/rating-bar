@@ -96,16 +96,20 @@ Graphics will be announced as `Graphic` by `Screen Readers` along with its descr
 The description is combination of `label` and `rating` property.
 
 
+
 ## Test Scenarios
-1. `rating` and `label` should be updated correctly.
-2. Different `rating` `COLOR` should be correctly displayed as per design docs
+
+ 1. `rating` and `label` should be updated correctly.
+
+2. Different `rating`  `COLOR` should be correctly displayed as per design docs
+
 | **Rating Range**| **CSS Color Variable** | **Default Value** |
 |-----------------|------------------------|-------------------|
-| `8.5-10.0`      | `--rating-excellent`   | `#238738` |
-| `7.0-8.5`       | `--rating-great`       | `#67AB04` |
-| `5.0-7.0`       | `--rating-average`     | `D99B22`  |
-| `3.0-5.0`       | `--rating-poor`        |  |
-| `1.0-3.0`       | `--rating-bad`         | `#D9222A`|
-| Any other Value | `--separator-01`       | `#E1E6ED`|
+| `8.5-10.0`      | `--rating-excellent`   | `#238738`         |
+| `7.0-8.5`       | `--rating-great`       | `#67AB04`         |
+| `5.0-7.0`       | `--rating-average`     | `#D99B22`         |
+| `3.0-5.0`       | `--rating-poor`        | `#D97322`         |
+| `1.0-3.0`       | `--rating-bad`         | `#D9222A`         |
+| Any other Value | `--separator-01`       | `#E1E6ED`         |
 
 
