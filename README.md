@@ -17,3 +17,7 @@ _Pagination_
   
 6. `Pagination` results to be fetched from BE on then `dropdown` value and the `next result identifier` to be sent in request.
 7.  `Screen reader` should announce whenever the results or any UI element is updated
+
+8. This component can be place at the bottom of the result container as well in that case result section should be developed in such a way.
+9. There may be a case where there is no pagination required then this component should not appear.
+
