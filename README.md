@@ -1,44 +1,13 @@
-## Getting Started with orxe-components
+### Assigment 2 : Pagination component
+`Drop Down`
+1. Dropdown should be configurable limit and show/hide properties.
+2. Dropdown should be `keyboard` and `Screen Reader` accessible
+3. On change of the selected value the number of paginations would increase or decrease.
 
-The Carbon based foundational web components library can be easily installed in following steps.
+`Pagination`
+3. Pagination number `keyboard` and `Screen Reader`.
+4. Left cheveron should appear as soon as user selects any other page other than the First page
+5. Right cheveron to be hidden or disabled on the last page.
 
-### Access Locally
-
-Pulldown a local copy of this Github repository created for you.
-
-```
-$ git clone git@github.com:TaviscaSolutions/orxe-components.git
-$ cd [REPO_NAME]
-```
-
-Use HTTPs or add ssh to do so. Using ssh is recommended.
-
-### Set correct credentials
-
-Step 2 would be to set correct registry address and login to NPM via console. This is required for our privacy and security.
-
-```
-$ npm config set registry  "https://orxe-npm.coditas.dev"
-$ npm config get registry //should print - https://orxe-npm.coditas.dev
-$ npm logout
-$ npm login
-```
-
-#### Enter following details when asked -
-
-```
-Username: orxe-manager
-Password: <Get password from registry admin>
-Email: <Get email from registry admin>
-```
-
-### Install and Start
-
-```
-$ lerna bootstrap --hoist
-$ lerna run start --scope <component-name>
-```
-
-The start command should open a tab in your browser at http://localhost:3000/
-
-#### Enjoy
+6. Pagination results to be fetched from BE on then `dropdown` value and the `next result identifier` to be sent in request.
+7. `Screen reader` should announce whenever the results or any UI element is updated
